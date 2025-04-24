@@ -1,10 +1,10 @@
-import './App.css'
-import { Outlet, Link } from 'react-router-dom';
+import './App.scss'
+import { Outlet } from 'react-router-dom';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
   return (
     <>
-      <h1>Hello, dhinga chika!</h1>
       <Outlet />
     </>
   )

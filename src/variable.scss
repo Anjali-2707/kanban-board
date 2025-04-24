@@ -1,0 +1,13 @@
+@use "sass:color";
+
+$primary-color: #029396;
+$primary-hover: color.adjust($primary-color, $lightness: 10%);
+$input-border: #ccc;
+$error-color: #e74c3c;
+$font-stack: 'Segoe UI', Roboto, sans-serif;
+$transition-fast: 0.2s ease-in-out;
+$kb-black: #232323;
+$kb-grey: #555;
+$kb-white: #fff;
+$dark-box-shadow: #1e1e1e 0px 5px 15px;
+$light-box-shadow: #00000059 0px 5px 15px;

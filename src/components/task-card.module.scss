@@ -1,0 +1,16 @@
+@use '../variable.scss' as variable;
+@use '../mixin.scss' as mixin;
+
+.task-card {
+    height: 20vh;
+    width: 25vw;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter : blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius   : 12px;
+    box-shadow      : variable.$light-box-shadow;
+    font-family     : variable.$font-stack;
+    font-weight  : 400;
+    font-size: 12px;
+}

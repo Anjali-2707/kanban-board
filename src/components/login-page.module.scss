@@ -1,0 +1,66 @@
+@use '../variable.scss' as variable;
+@use '../mixin.scss' as mixin;
+
+.login {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+
+
+    .login-card {
+        max-width       : 360px;
+        margin          : 4rem auto;
+        padding         : 2rem;
+        //Glass UI
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter : blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-radius   : 12px;
+        box-shadow      : variable.$light-box-shadow;
+        font-family     : variable.$font-stack;
+        font-weight  : 400;
+        font-size: 12px;
+
+        .noaccount {
+            margin: 10px auto;
+            margin-top: 20px;
+            .signup {
+                color: variable.$primary-color;
+                text-decoration: underline;
+            }
+        }
+
+        form {
+            display       : flex;
+            flex-direction: column;
+            gap           : 1.5rem;
+            margin-bottom: 3px;
+        }
+
+        .button-group {
+            display        : flex;
+            justify-content: center;
+            align-items: center;
+            gap            : 1rem;
+        }
+
+        @media (max-width: 400px) {
+            padding: 1.5rem;
+            margin : 2rem auto;
+        }
+
+        .logo {
+            width: 80px;            
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: block;         
+            @include mixin.transition(transform);
+            animation: spin 4s linear infinite;
+          }
+          
+          @keyframes spin {
+            from   { transform: rotate(0deg); }
+            to     { transform: rotate(360deg); }
+          }
+    }
+}

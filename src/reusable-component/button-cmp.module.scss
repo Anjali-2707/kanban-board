@@ -1,0 +1,58 @@
+@use '../variable.scss' as variable;
+@use '../mixin.scss' as mixin;
+
+button {
+    padding      : 0.35rem;
+    font-size    : 12px;
+    font-weight  : 500;
+    border       : none;
+    border-radius: 6px;
+    box-shadow: variable.$light-box-shadow;
+    cursor       : pointer;
+    @include mixin.transition(background-color, transform);
+
+    &.primary {
+        background: variable.$primary-color;
+        color     : #fff;
+
+        &:hover {
+            background: variable.$primary-hover;
+            transform : translateY(-2px);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+    }
+
+    &.secondary {
+        background: variable.$primary-color;
+        color     : #fff;
+
+        &:hover {
+            background: variable.$primary-hover;
+            transform : translateY(-2px);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+    }
+
+    &.login {
+        flex: 1;
+        background: variable.$primary-color;
+        color     : #fff;
+        height: 30px;
+        border-radius: 20px;
+
+        &:hover {
+            background: variable.$primary-hover;
+            transform : translateY(-2px);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+    }
+}

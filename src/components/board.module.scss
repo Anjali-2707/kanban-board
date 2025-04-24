@@ -1,0 +1,51 @@
+@use '../variable.scss' as variable;
+@use '../mixin.scss' as mixin;
+
+.main {
+    display: inline-block;
+    .board-name {
+        font-family     : variable.$font-stack;
+        font-weight  : 400;
+        font-size: 26px;
+        margin: 4px 20px 0px 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .board {
+        height: 90vh;
+        width: 90vw;
+        margin: 10px 20px 20px 20px;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter : blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-radius   : 12px;
+        box-shadow      : variable.$light-box-shadow;
+        font-family     : variable.$font-stack;
+        font-weight  : 400;
+        font-size: 12px;
+    
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    
+        > .column {
+            padding: 16px;
+
+            &:not(:last-child) {
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+            }
+    
+            .header {
+                font-size: 12px;
+                font-weight: 400;
+                color: variable.$kb-white;
+                margin: 0 0 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    
+            @include mixin.custom-scrollbar;
+        }
+    }
+}

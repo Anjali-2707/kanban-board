@@ -1,0 +1,52 @@
+@use '../variable.scss' as variable;
+@use '../mixin.scss' as mixin;
+
+
+.input-section {
+    position      : relative;
+    display       : flex;
+    flex-direction: column;
+
+    label {
+        color        : variable.$kb-white;
+        margin-bottom: 0.5rem;
+        font-weight  : 400;
+        font-size: 12px;
+        @include mixin.transition(color);
+        cursor: text;
+    }
+
+    input {
+        padding      : 0.15rem 1rem;
+        font-size    : 1rem;
+        border       : 0px solid variable.$input-border;
+        border-radius: 6px;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter : blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        @include mixin.transition(border-color, box-shadow);
+        outline: none;
+
+        &:focus {
+            border-color: variable.$primary-color;
+            box-shadow  : 0 0 0 3px rgba(variable.$primary-color, 0.2);
+        }
+
+        // &:invalid {
+        //     border-color: variable.$error-color;
+        // }
+    }
+
+    .error-message {
+        color     : variable.$error-color;
+        font-size : 0.875rem;
+        margin-top: 0.25rem;
+        opacity   : 0;
+        @include mixin.transition(opacity, transform);
+
+        input:invalid+& {
+            opacity  : 1;
+            transform: translateY(0);
+        }
+    }
+}
